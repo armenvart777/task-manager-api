@@ -1,23 +1,23 @@
-# Task Manager API
+# Task Manager API — Менеджер задач
 
-A RESTful API for managing tasks built with Python and Flask. Supports full CRUD operations, filtering, priority levels, and task statistics.
+RESTful API для управления задачами на Python и Flask. Полный CRUD, фильтрация, приоритеты и статистика.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![Flask](https://img.shields.io/badge/Flask-3.1-green?logo=flask)
 ![SQLite](https://img.shields.io/badge/SQLite-3-lightgrey?logo=sqlite)
 
-## API Endpoints
+## API Эндпоинты
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/tasks` | Get all tasks (supports `?status=` and `?priority=` filters) |
-| GET | `/api/tasks/:id` | Get a single task |
-| POST | `/api/tasks` | Create a new task |
-| PUT | `/api/tasks/:id` | Update a task |
-| DELETE | `/api/tasks/:id` | Delete a task |
-| GET | `/api/stats` | Get task statistics |
+| Метод | Эндпоинт | Описание |
+|-------|----------|----------|
+| GET | `/api/tasks` | Получить все задачи (фильтры: `?status=`, `?priority=`) |
+| GET | `/api/tasks/:id` | Получить одну задачу |
+| POST | `/api/tasks` | Создать новую задачу |
+| PUT | `/api/tasks/:id` | Обновить задачу |
+| DELETE | `/api/tasks/:id` | Удалить задачу |
+| GET | `/api/stats` | Статистика по задачам |
 
-## Quick Start
+## Быстрый старт
 
 ```bash
 git clone https://github.com/armenvart777/task-manager-api.git
@@ -26,39 +26,39 @@ pip install -r requirements.txt
 python app.py
 ```
 
-## Usage Examples
+## Примеры использования
 
-**Create a task:**
+**Создать задачу:**
 ```bash
 curl -X POST http://localhost:5000/api/tasks \
   -H "Content-Type: application/json" \
-  -d '{"title": "Learn Flask", "description": "Build a REST API", "priority": "high"}'
+  -d '{"title": "Изучить Flask", "description": "Создать REST API", "priority": "high"}'
 ```
 
-**Get all tasks:**
+**Получить все задачи:**
 ```bash
 curl http://localhost:5000/api/tasks
 ```
 
-**Filter by status:**
+**Фильтр по статусу:**
 ```bash
 curl http://localhost:5000/api/tasks?status=pending
 ```
 
-**Update a task:**
+**Обновить задачу:**
 ```bash
 curl -X PUT http://localhost:5000/api/tasks/1 \
   -H "Content-Type: application/json" \
   -d '{"status": "completed"}'
 ```
 
-## Task Schema
+## Схема задачи
 
 ```json
 {
   "id": 1,
-  "title": "Learn Flask",
-  "description": "Build a REST API",
+  "title": "Изучить Flask",
+  "description": "Создать REST API",
   "status": "pending",
   "priority": "high",
   "created_at": "2026-02-25T12:00:00",
@@ -66,9 +66,9 @@ curl -X PUT http://localhost:5000/api/tasks/1 \
 }
 ```
 
-**Status values:** `pending`, `in_progress`, `completed`
-**Priority values:** `low`, `medium`, `high`
+**Статусы:** `pending`, `in_progress`, `completed`
+**Приоритеты:** `low`, `medium`, `high`
 
-## License
+## Лицензия
 
 MIT
